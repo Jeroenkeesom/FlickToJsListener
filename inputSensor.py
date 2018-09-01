@@ -121,22 +121,22 @@ def main(stdscr):
         if len(flicktxt) > 0 and flickcount == 0:
             if 'westeast' == flicktxt:
                 pyautogui.typewrite('a')
-                time.sleep(1.1)
+                time.sleep(0.5)
                 flicktxt = ''
                 flickcount = 5
             elif 'eastwest' == flicktxt:
                 pyautogui.typewrite('d')
-                time.sleep(1.1)
+                time.sleep(0.5)
                 flicktxt = ''
                 flickcount = 5
             elif 'northsouth' == flicktxt:
                 pyautogui.typewrite('s')
-                time.sleep(1.1)
+                time.sleep(0.5)
                 flicktxt = ''
                 flickcount = 5
             elif 'southnorth' == flicktxt:
                 pyautogui.typewrite('w')
-                time.sleep(1.1)
+                time.sleep(0.5)
                 flicktxt = ''
                 flickcount = 5
             else:
