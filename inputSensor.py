@@ -2,6 +2,7 @@
 
 import flicklib
 import time
+import RPi.GPIO as GPIO
 import curses
 import pyautogui
 from curses import wrapper
@@ -56,6 +57,14 @@ def touch(position):
 
 
 def main(stdscr):
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(22, GPIO.OUT)
+    GPIO.output(22, False)
+
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(4, GPIO.OUT)
+    GPIO.output(4, True)
+
     global xyztxt
     global flicktxt
     global airwheeltxt
@@ -85,6 +94,14 @@ def main(stdscr):
     stdscr.refresh()
 
     datawin = curses.newwin(8, curses.COLS - 6,  2, 3)
+
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(22, GPIO.OUT)
+    GPIO.output(22, True)
+
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(4, GPIO.OUT)
+    GPIO.output(4, False)
 
     # Update data window continuously until Control-C
     while True:
